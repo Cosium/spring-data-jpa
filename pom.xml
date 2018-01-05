@@ -479,6 +479,12 @@
 		</pluginRepository>
 	</pluginRepositories>
 
+	<scm>
+		<url>https://github.com/Cosium/spring-data-jpa</url>
+		<connection>scm:git:git://github.com/Cosium/spring-data-jpa.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com:Cosium/spring-data-jpa.git</developerConnection>
+	</scm>
+
 	<distributionManagement>
 		<repository>
 			<id>cosium-repo</id>
