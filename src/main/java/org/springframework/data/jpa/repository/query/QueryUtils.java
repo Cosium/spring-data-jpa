@@ -586,7 +586,7 @@ public abstract class QueryUtils {
 			propertyPathModel = from.get(segment).getModel();
 		}
 
-		if (requiresJoin(propertyPathModel, model instanceof PluralAttribute) && !isAlreadyFetched(from, segment)) {
+		if (requiresJoin(propertyPathModel, model instanceof PluralAttribute, !property.hasNext()) && !isAlreadyFetched(from, segment)) {
 			Join<?, ?> join = getOrCreateJoin(from, segment);
 			return (Expression<T>) (property.hasNext() ? toExpressionRecursively(join, property.next()) : join);
 		} else {
@@ -601,9 +601,10 @@ public abstract class QueryUtils {
 	 * 
 	 * @param propertyPathModel may be {@literal null}.
 	 * @param forPluralAttribute
+	 * @param forLeafProperty
 	 * @return
 	 */
-	private static boolean requiresJoin(@Nullable Bindable<?> propertyPathModel, boolean forPluralAttribute) {
+	private static boolean requiresJoin(@Nullable Bindable<?> propertyPathModel, boolean forPluralAttribute, boolean forLeafProperty) {
 
 		if (propertyPathModel == null && forPluralAttribute) {
 			return true;
@@ -616,6 +617,9 @@ public abstract class QueryUtils {
 		Attribute<?, ?> attribute = (Attribute<?, ?>) propertyPathModel;
 
 		if (!ASSOCIATION_TYPES.containsKey(attribute.getPersistentAttributeType())) {
+			return false;
+		}
+		if (forLeafProperty && !attribute.isCollection()) {
 			return false;
 		}
 
