@@ -5,7 +5,7 @@
 
 	<groupId>org.springframework.data</groupId>
 	<artifactId>spring-data-jpa</artifactId>
-	<version>2.0.2.RELEASE</version>
+	<version>2.0.2.cos-fork.4</version>
 
 	<name>Spring Data JPA</name>
 	<description>Spring Data module for JPA repositories.</description>
@@ -478,5 +478,25 @@
 			<url>https://repo.spring.io/plugins-release</url>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<scm>
+		<url>https://github.com/Cosium/spring-data-jpa</url>
+		<connection>scm:git:https://github.com/Cosium/spring-data-jpa</connection>
+		<developerConnection>scm:git:https://github.com/Cosium/spring-data-jpa</developerConnection>
+	  <tag>HEAD</tag>
+  </scm>
+
+	<distributionManagement>
+		<repository>
+			<id>cosium-repo</id>
+			<name>Internal Release Repository</name>
+			<url>https://repo.cosium.com/repository/internal/</url>
+		</repository>
+		<snapshotRepository>
+			<id>cosium-repo-snapshots</id>
+			<name>Internal Snapshot Repository</name>
+			<url>https://repo.cosium.com/repository/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 </project>
