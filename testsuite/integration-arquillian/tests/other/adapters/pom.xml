@@ -16,15 +16,14 @@
 ~ limitations under the License.
 -->
 
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>org.keycloak.testsuite</groupId>
         <artifactId>integration-arquillian-tests-other</artifactId>
-        <version>6.0.1.0.cosium-SNAPSHOT</version>
+        <version>6.0.1.0.cosium</version>
     </parent>
 
     <artifactId>integration-arquillian-tests-adapters</artifactId>
@@ -43,7 +42,7 @@
         <app.server.mode>manual</app.server.mode>
 
         <app.server.host>localhost</app.server.host>
-        <app.server.browserHost/> <!-- if set, this host will be used by the browser instead of app.server.host -->
+        <app.server.browserHost /> <!-- if set, this host will be used by the browser instead of app.server.host -->
         <app.server.port.offset>200</app.server.port.offset>
         <app.server.http.port>8280</app.server.http.port>
         <app.server.https.port>8643</app.server.https.port>
@@ -69,11 +68,11 @@
         <app.server.2.management.port>10390</app.server.2.management.port>
         <app.server.2.management.port.jmx>10399</app.server.2.management.port.jmx>
 
-        <settings.path></settings.path>
-        <maven.repo.local></maven.repo.local>
-        <repo.url></repo.url>
-        <wl.password></wl.password>
-        <wl.home></wl.home>
+        <settings.path />
+        <maven.repo.local />
+        <repo.url />
+        <wl.password />
+        <wl.home />
 
         <adapter.test.props>
             -Dapp.server.base.url=http://localhost:${app.server.http.port}

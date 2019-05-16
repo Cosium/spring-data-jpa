@@ -16,12 +16,11 @@
 ~ limitations under the License.
 -->
 
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>org.keycloak.testsuite</groupId>
         <artifactId>integration-arquillian-servers-auth-server</artifactId>
-        <version>6.0.1.0.cosium-SNAPSHOT</version>
+        <version>6.0.1.0.cosium</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -220,7 +219,7 @@
                                 </goals>
                                 <configuration>
                                     <target>
-                                        <ant antfile="${common.resources}/ant/configure.xml" target="${ant.scenario}-generate" >
+                                        <ant antfile="${common.resources}/ant/configure.xml" target="${ant.scenario}-generate">
                                             <!-- In most of the cases, Ant Plugin picks up properties automatically.
                                                  However, in some rare cases, it will not detect if a property has been overriden
                                                  in the command line using "-D" switch (see why here: https://technotes.khitrenovich.com/properties-resolution-maven-implications-antrun-plugin/
@@ -660,7 +659,7 @@
                 <mariadb.ha.mode>replication</mariadb.ha.mode>
                 <mariadb.hosts>localhost:3316,localhost:3326</mariadb.hosts>
                 <mariadb.database>keycloak</mariadb.database>
-                <mariadb.options></mariadb.options>
+                <mariadb.options />
                 <keycloak.connectionsJpa.url>jdbc:mariadb:${mariadb.ha.mode}://${mariadb.hosts}/${mariadb.database}${mariadb.options}</keycloak.connectionsJpa.url>
             </properties>
         </profile>

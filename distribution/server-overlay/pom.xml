@@ -15,19 +15,18 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>keycloak-distribution-parent</artifactId>
         <groupId>org.keycloak</groupId>
-        <version>6.0.1.0.cosium-SNAPSHOT</version>
+        <version>6.0.1.0.cosium</version>
     </parent>
 
     <artifactId>keycloak-server-overlay</artifactId>
     <packaging>pom</packaging>
     <name>Keycloak Server Overlay Distribution</name>
-    <description/>
+    <description />
 
     <dependencies>
         <dependency>
@@ -125,23 +124,23 @@
                             <target>
                                 <concat destfile="${project.build.directory}/cli/keycloak-install.cli" force="yes">
                                     <fileset dir="${project.build.directory}/cli">
-                                        <include name="keycloak-install-base.cli"/>
+                                        <include name="keycloak-install-base.cli" />
                                     </fileset>
                                     <fileset dir="${project.build.directory}/cli">
-                                        <include name="default-keycloak-subsys-config.cli"/>
+                                        <include name="default-keycloak-subsys-config.cli" />
                                     </fileset>
                                 </concat>
                                 <concat destfile="${project.build.directory}/cli/keycloak-install-ha.cli" force="yes">
                                     <fileset dir="${project.build.directory}/cli">
-                                        <include name="keycloak-install-ha-base.cli"/>
+                                        <include name="keycloak-install-ha-base.cli" />
                                     </fileset>
                                     <fileset dir="${project.build.directory}/cli">
-                                        <include name="default-keycloak-subsys-config.cli"/>
+                                        <include name="default-keycloak-subsys-config.cli" />
                                     </fileset>
                                 </concat>
-                                <delete file="${project.build.directory}/cli/default-keycloak-subsys-config.cli"/>
-                                <delete file="${project.build.directory}/cli/keycloak-install-base.cli"/>
-                                <delete file="${project.build.directory}/cli/keycloak-install-ha-base.cli"/>
+                                <delete file="${project.build.directory}/cli/default-keycloak-subsys-config.cli" />
+                                <delete file="${project.build.directory}/cli/keycloak-install-base.cli" />
+                                <delete file="${project.build.directory}/cli/keycloak-install-ha-base.cli" />
                             </target>
                         </configuration>
                     </execution>
@@ -199,7 +198,7 @@
                 <build-tools.version>${eap.build-tools.version}</build-tools.version>
                 <assemblyFile>assembly.xml</assemblyFile>
                 <profileExcludes>%regex[(docs/contrib.*)|(docs/examples.*)|(docs/schema.*)]</profileExcludes>
-                <readmeInclude></readmeInclude>
+                <readmeInclude />
             </properties>
             <dependencies>
                 <dependency>

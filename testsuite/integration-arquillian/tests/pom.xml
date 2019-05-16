@@ -16,15 +16,14 @@
 ~ limitations under the License.
 -->
 
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>org.keycloak.testsuite</groupId>
         <artifactId>integration-arquillian</artifactId>
-        <version>6.0.1.0.cosium-SNAPSHOT</version>
+        <version>6.0.1.0.cosium</version>
     </parent>
 
     <packaging>pom</packaging>
@@ -56,7 +55,7 @@
         <auth.server.config.dir>${auth.server.home}</auth.server.config.dir>
 
         <auth.server.host>localhost</auth.server.host>
-        <auth.server.browserHost/> <!-- if set, this host will be used by the browser instead of auth.server.host -->
+        <auth.server.browserHost /> <!-- if set, this host will be used by the browser instead of auth.server.host -->
         <auth.server.port.offset>100</auth.server.port.offset>
         <auth.server.http.port>8180</auth.server.http.port>
         <auth.server.events.http.port>8089</auth.server.events.http.port>
@@ -67,9 +66,9 @@
         <auth.server.memory.settings>-Xms64m -Xmx512m</auth.server.memory.settings>
         <auth.server.config.property.name>serverConfig</auth.server.config.property.name>
         <auth.server.adapter.impl.class>org.jboss.as.arquillian.container.managed.ManagedDeployableContainer</auth.server.adapter.impl.class>
-        <auth.server.truststore>&#36;{jboss.home.dir}/standalone/configuration/keycloak.truststore</auth.server.truststore>
+        <auth.server.truststore>${jboss.home.dir}/standalone/configuration/keycloak.truststore</auth.server.truststore>
         <auth.server.truststore.password>secret</auth.server.truststore.password>
-        <auth.server.jvm.args.extra/>
+        <auth.server.jvm.args.extra />
 
         <auth.server.jboss.artifactId>integration-arquillian-servers-auth-server-${auth.server}</auth.server.jboss.artifactId>
         <auth.server.jboss.skip.unpack>${auth.server.undertow}</auth.server.jboss.skip.unpack>
@@ -81,8 +80,8 @@
         <auth.server.jboss.jvm.debug.args>-agentlib:jdwp=transport=dt_socket,server=y,suspend=${auth.server.debug.suspend},address=${auth.server.host}:${auth.server.debug.port}</auth.server.jboss.jvm.debug.args>
 
         <auth.server.remote>false</auth.server.remote>
-        <auth.server.profile/>
-        <auth.server.feature/>
+        <auth.server.profile />
+        <auth.server.feature />
 
         <app.server.skip.unpack>true</app.server.skip.unpack>
         <app.server.artifactId>integration-arquillian-servers-app-server-${app.server}</app.server.artifactId>
@@ -104,7 +103,7 @@
         <!-- Cluster tests are failing with -Xmx512 for insufficient physical memory -->
         <app.server.memory.settings>-Xms64m -Xmx384m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m</app.server.memory.settings>
         <app.server.ssl.required>false</app.server.ssl.required>
-        <app.server.jvm.args.extra/>
+        <app.server.jvm.args.extra />
 
         <cache.server>undefined</cache.server>
         <cache.server.container>cache-server-${cache.server}</cache.server.container>
@@ -124,7 +123,7 @@
         <!--KEYCLOAK-4793-->
         <maven.repo.local>${user.home}/.m2/repository</maven.repo.local>
         <settings.path>${user.home}/.m2/settings.xml</settings.path>
-        <repo.url/>
+        <repo.url />
         <kie.maven.settings>
             -Dkie.maven.settings.custom=${settings.path}
             -Dkie.maven.repo.local=${maven.repo.local}
@@ -151,24 +150,24 @@
         <browser>htmlUnit</browser>
         <webdriverDownloadBinaries>true</webdriverDownloadBinaries>
         <droneInstantiationTimeoutInSeconds>60</droneInstantiationTimeoutInSeconds>
-        <github.username/>
-        <github.secretToken/>
+        <github.username />
+        <github.secretToken />
         <ieDriverArch>Win32</ieDriverArch>
         <js.browser>phantomjs</js.browser>
         <js.chromeArguments>--headless</js.chromeArguments>
         <htmlUnitBrowserVersion>chrome</htmlUnitBrowserVersion>
-        <firefox_binary/> <!-- the path is set automatically based on the OS -->
+        <firefox_binary /> <!-- the path is set automatically based on the OS -->
         <firefoxLegacyDriver>false</firefoxLegacyDriver>
-        <chromeBinary/>
-        <chromeArguments/>
+        <chromeBinary />
+        <chromeArguments />
 
-        <appium.platformName/>
-        <appium.deviceName/>
-        <appium.browserName/>
-        <appium.avd/>
-        <appium.automationName/>
-        <appium.noReset/>
-        <appium.fullReset/>
+        <appium.platformName />
+        <appium.deviceName />
+        <appium.browserName />
+        <appium.avd />
+        <appium.automationName />
+        <appium.noReset />
+        <appium.fullReset />
 
         <frontend.console.output>true</frontend.console.output>
         <backends.console.output>true</backends.console.output>
@@ -791,16 +790,16 @@
                                         <skip>${skip.copy.auth.crossdc.nodes}</skip>
                                         <target>
                                             <move todir="${auth.server.crossdc01.home}">
-                                                <fileset dir="${auth.server.home}"/>
+                                                <fileset dir="${auth.server.home}" />
                                             </move>
                                             <copy todir="${auth.server.crossdc02.home}">
-                                                <fileset dir="${auth.server.crossdc01.home}"/>
+                                                <fileset dir="${auth.server.crossdc01.home}" />
                                             </copy>
                                             <copy todir="${auth.server.crossdc11.home}">
-                                                <fileset dir="${auth.server.crossdc01.home}"/>
+                                                <fileset dir="${auth.server.crossdc01.home}" />
                                             </copy>
                                             <copy todir="${auth.server.crossdc12.home}">
-                                                <fileset dir="${auth.server.crossdc01.home}"/>
+                                                <fileset dir="${auth.server.crossdc01.home}" />
                                             </copy>
                                         </target>
                                     </configuration>
@@ -1167,10 +1166,10 @@
                                     <configuration>
                                         <target>
                                             <move todir="${auth.server.backend1.home}">
-                                                <fileset dir="${auth.server.home}"/>
+                                                <fileset dir="${auth.server.home}" />
                                             </move>
                                             <copy todir="${auth.server.backend2.home}">
-                                                <fileset dir="${auth.server.backend1.home}"/>
+                                                <fileset dir="${auth.server.backend1.home}" />
                                             </copy>
                                         </target>
                                     </configuration>

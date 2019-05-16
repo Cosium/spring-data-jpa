@@ -16,15 +16,14 @@
 ~ limitations under the License.
 -->
 
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>org.keycloak</groupId>
         <artifactId>keycloak-testsuite-pom</artifactId>
-        <version>6.0.1.0.cosium-SNAPSHOT</version>
+        <version>6.0.1.0.cosium</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     
@@ -91,7 +90,7 @@
         <keycloak.connectionsJpa.driver>org.h2.Driver</keycloak.connectionsJpa.driver>
         <keycloak.connectionsJpa.database>keycloak</keycloak.connectionsJpa.database>
         <keycloak.connectionsJpa.user>sa</keycloak.connectionsJpa.user>
-        <keycloak.connectionsJpa.password></keycloak.connectionsJpa.password>
+        <keycloak.connectionsJpa.password />
         <keycloak.connectionsJpa.url>jdbc:h2:mem:test;MVCC=TRUE;DB_CLOSE_DELAY=-1</keycloak.connectionsJpa.url>
         <keycloak.connectionsJpa.schema>DEFAULT</keycloak.connectionsJpa.schema>
 

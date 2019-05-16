@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>integration-arquillian-test-apps</artifactId>
         <groupId>org.keycloak.testsuite</groupId>
-        <version>6.0.1.0.cosium-SNAPSHOT</version>
+        <version>6.0.1.0.cosium</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -20,7 +18,7 @@
         <spring-boot-adapter-jetty>false</spring-boot-adapter-jetty>
         <spring.boot.tomcat.adapter.artifactId>keycloak-tomcat8-adapter</spring.boot.tomcat.adapter.artifactId>
 
-        <jetty.version/>
+        <jetty.version />
 
         <app.server.debug.port>5006</app.server.debug.port>
         <app.server.debug.suspend>n</app.server.debug.suspend>
