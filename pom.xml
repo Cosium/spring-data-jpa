@@ -174,16 +174,16 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/keycloak/keycloak.git</connection>
-        <developerConnection>scm:git:git@github.com:keycloak/keycloak.git</developerConnection>
-        <url>https://github.com/keycloak/keycloak/tree/master/</url>
+        <url>https://github.com/Cosium/spring-data-jpa</url>
+        <connection>scm:git:https://github.com/Cosium/spring-data-jpa</connection>
+        <developerConnection>scm:git:https://github.com/Cosium/spring-data-jpa</developerConnection>
     </scm>
 
     <distributionManagement>
         <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
-            <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
+            <id>cosium-repo</id>
+            <name>Internal Release Repository</name>
+            <url>https://repo.cosium.com/repository/internal/</url>
         </repository>
     </distributionManagement>
 
